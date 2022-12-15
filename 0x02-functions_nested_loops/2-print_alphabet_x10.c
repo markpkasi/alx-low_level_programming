@@ -2,20 +2,19 @@
 
 /**
  * print_alphabet_x10 - a function that prints a - z 10 times
+ * main - Entry point
  * Return: 0 (Success)
  */
 
 void print_alphabet_x10(void)
 {
-	int i;
-	char j;
+	int x = 1;
+	char la;
 
-	for (i = 0; i < 10; i++)
+	for (x = 1; x <= 10; x++)
 	{
-		for (j = 'a'; j <= 'z'; j++)
-		{
-			_putchar(j);
-		}
+		for (la = 'a'; la <= 'z'; la++)
+			_putchar(la);
 		_putchar('\n');
 	}
 }
