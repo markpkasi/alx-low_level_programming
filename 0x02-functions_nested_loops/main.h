@@ -1,11 +1,6 @@
-#include <unistd.h>
-
-/**_putchar - writes the character
- * @c: the character to print
- *
- * Return: Always 0 on success
- */
-int _putchar(char c)
+#ifndef main_h
+#define main_h
+int _putchar(char);
 	void print_alphabet(void);
 	void print_alphabet_x10(void);
 	int _islower(int c);
@@ -18,4 +13,4 @@ int _putchar(char c)
 	int add(int, int);
 	void print_to_98(int n);
 	void print_times_table(int n);
-#endif /* MAIN_H */
+#endif
