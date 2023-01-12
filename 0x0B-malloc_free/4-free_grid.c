@@ -1,17 +1,19 @@
-#include <stdlib.h>
+#include "main.h"
 
 /**
  * free_grid - free the grid
  * @grid: grid of memories
  * @height: int
- * Return: void
+ * Return: free grid
  */
 
 void free_grid(int **grid, int height)
 {
-	int = 0;
+	int = i;
 
-	for (; i < height; i++)
+	for (i = 0; i < height; i++)
+	{
 		free(grid[i]);
+	}
 	free(grid);
 }
