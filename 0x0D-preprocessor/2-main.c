@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * main - prints the name of the file that was compiled
- * Return: int
+ * main - program compilation starts from main
+ * Description: prints the name of the file that was compiled.
+ * author: markpkasi
+ * Return: 0 on success
  */
 
 int main(void)
