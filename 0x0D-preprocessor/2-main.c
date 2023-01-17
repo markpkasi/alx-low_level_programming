@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - prints the name of the file that was compiled.
+ * main - prints the name of the file that was compiled
  * Return: int
  */
 
