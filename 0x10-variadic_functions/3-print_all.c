@@ -3,72 +3,50 @@
 #include <stdio.h>
 
 /**
- * print_int - prints int
- * @list: arguments from print_all
+ * print_all - prints all
+ * @format: parameter
  */
-void print_int(va_list list)
-{
-	printf("%d", va_arg(list, int));
-}
 
-/**
- * print_float - prints float
- * @list: arguments from print_all
- */
-void print_float(va_list list)
-{
-	printf("%c", va_arg(list, int));
-}
-
-/**
- * print_str - prints string
- * @list: arguments from print_all
- */
-void print_str(va_list list)
-{
-	char *s = va_arg(list, char *);
-
-	s == NULL ? printf("(nil)") : prinf("%s", s);
-
-}
-
-/**
- * print_all - prints any type
- * @format: arguments to print
- */
 void print_all(const char * const format, ...)
 {
-	va_list list;
-	int i = 0, j = 0;
-	char *sep = "";
+	va_list valist;
+	unsigned int i = 0, j, k = 0;
+	char *str;
+	const char t_arg[] = "cifs";
 
-	printTypeStruct printType[] = {
-		{ "i", print_int },
-		{ "f", print_float },
-		{ "c", print_char },
-		{ "s", print_str },
-		{NULL, NULL}
-	};
-
-	va_start(list, format);
-
+	va_start(valist, format);
 	while (format && format[i])
 	{
 		j = 0;
-		while (j < 4)
+		while (t_arg[i])
 		{
-			if (*printType[j].type == format[i])
+			if (format[i] == t_arg[j] && k)
 			{
-				printf("%s", sep);
-				printType[j].printer(list);
-				sep = ", ";
+				printf(", ");
 				break;
-			}
-			j++;
+			} j++;
 		}
-		i++;
+		switch (format[i])
+		{
+			case 'c':
+				printf("%c", va_arg(valist, int)), k = 1;
+				break;
+			case 'i':
+				printf("%d", va_arg(valist, int)), k = 1;
+				break;
+			case 'f':
+				printf("%f", va_arg(valist, double)), k = 1;
+				break;
+			case 's':
+				str = va_arg(valist, char *), k = 1;
+				if (!str)
+				{
+					printf("(nil)");
+					break;
+				}
+				printf("%s", str);
+				break;
+		} i++;
 	}
-
-	printf("\n");
-	va_end(list);
+	printf("\n"), va_end(valist);
 }
