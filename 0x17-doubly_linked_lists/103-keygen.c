@@ -37,7 +37,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	}
 	srand(tmp ^ 14);
 	password[3] = codex[rand() & 63];
-	
 	tmp = 0;
 	for (i = 0; i < len; i++)
 		tmp += (argv[1][i] * argv[1][i]);
