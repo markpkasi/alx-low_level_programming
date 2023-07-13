@@ -8,7 +8,7 @@
  * @list: input list
  * @size: size of the array
  * @value: value to search in
- * 
+ *
  * Return: index of the number
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
